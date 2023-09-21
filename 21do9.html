@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopots - Tela de Entrada</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-top: 100px;
+        }
+        input {
+            padding: 10px;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao Stopots</h1>
+    <p>Insira seu nome:</p>
+    <input type="text" id="playerName" placeholder="Seu Nome">
+    <button onclick="confirmName()">Entrar no Jogo</button>
+
+    <script>
+        function confirmName() {
+            const playerName = document.getElementById('playerName').value;
+            if (playerName.trim() === '') {
+                alert('Por favor, insira seu nome.');
+            } else {
+                // Armazenar o nome do jogador na sessão
+                sessionStorage.setItem('playerName', playerName);
+                // Redirecionar para a segunda tela de confirmação
+                window.location.href = 'confirmacao.html';
+            }
+        }
+    </script>
+</body>
+</html>
